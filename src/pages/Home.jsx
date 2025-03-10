@@ -36,7 +36,7 @@ export const Home = () => {
     >
       <div>
         <section className="mb-7">
-          <h1 className="logo-font text-main-white font-semibold text-3xl text-center p-3">
+          <h1 className="logo-font text-main-orange font-semibold text-3xl text-center p-3">
             KEEBIT
           </h1>
           <p className="font-light text-md text-center p-1 px-6 text-main-white">
@@ -78,7 +78,7 @@ export const Home = () => {
       </div>
       <div className="flex flex-col items-center">
         <section className="w-screen flex flex-col justify-center items-center gap-8">
-          <h1 className="text-2xl text-main-white">골프 연습장</h1>
+          <h1 className="text-2xl text-main-orange">골프 연습장</h1>
           <button
             className="py-3 px-10 text-center text-sm bg-main-orange border-0 rounded-sm"
             onClick={toggleGolfZoneList}
@@ -112,8 +112,8 @@ export const Home = () => {
       </div>
       <div className="flex flex-col items-center">
         <section className="w-screen flex flex-col justify-center items-center gap-3 text-main-white">
-          <h1 className="text-3xl font-semibold">FAQ</h1>
-          <p>Got questions? We've got answers.</p>
+          <h1 className="text-3xl font-semibold text-main-orange">FAQ</h1>
+          <p>궁금하신 점 있으신가요? 무엇이든 물어보세요.</p>
         </section>
         <section className="w-screen flex flex-col justify-center items-center py-24 p-7">
           <img
@@ -123,7 +123,7 @@ export const Home = () => {
         </section>
         <section className="w-screen flex flex-col items-center gap-8">
           <div className="w-screen flex flex-col border-0 px-14 gap-5">
-            <div className="w-screen flex items-center gap-5">
+            <div className="w-screen flex items-center gap-13">
               <svg
                 width="40"
                 height="40"
@@ -152,7 +152,7 @@ export const Home = () => {
                 </g>
               </svg>
               <p className="font-semibold text-xs text-main-white">
-                HOW TO MAKE A RESERVATION?
+                어떻게 예약을 하나요?
               </p>
             </div>
             <p className="w-screen flex text-main-orange text-sm gap-1.5">

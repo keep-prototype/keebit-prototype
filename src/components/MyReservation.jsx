@@ -96,7 +96,7 @@ export const MyReservation = () => {
             onClick={handleModalBackgroundClick}
             className="fixed top-0 left-0 bg-black opacity-70 z-10 w-full h-full"
           />
-          <div className="absolute top-1/2 left-1/2 w-10/12 flex flex-col items-center justify-center rounded-2xl h-40 bg-main-black z-20 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="fixed top-1/2 left-1/2 w-10/12 flex flex-col items-center justify-center rounded-2xl h-40 bg-main-black z-20 transform -translate-x-1/2 -translate-y-1/2">
             <p className="text-brown text-2xl font-semibold">
               {selectedReservation?.hour} : 00 ~ {selectedReservation?.hour} :
               55
