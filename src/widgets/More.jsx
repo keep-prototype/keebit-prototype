@@ -13,7 +13,7 @@ export const Button = ({ label, isBorder, borderColor, className }) => {
 };
 
 export const More = () => {
-  const [backgroundColor, setBackgroundColor] = React.useState('bg-black');
+  const [backgroundColor, setBackgroundColor] = React.useState('');
   const [opacityList, setOpacityList] = React.useState([
     true,
     true,
@@ -63,7 +63,7 @@ export const More = () => {
     }, 690);
 
     return () => {
-      console.log('asd');
+      setBackgroundColor('');
     };
   }, []);
 
