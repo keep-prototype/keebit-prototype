@@ -26,7 +26,7 @@ export const Home = () => {
     setTimeout(() => {
       setOpacity('opacity-100');
     }, 3200);
-  });
+  }, []);
 
   return (
     <main

@@ -1,15 +1,15 @@
 import { getGolfReservationTable, getUserInfo } from '../store/atoms';
 import { getListItem, setListItem } from '../lib/localStorage';
 import React, { useState } from 'react';
+import { useGolfStore } from '../store/useGolfStore';
 
 export const MyReservation = () => {
   const userInfo = getUserInfo();
 
-  const [reservations, setReservations] = useState(
-    getListItem('golfReservationTable') || []
-  );
   const [isCancelModal, setIsCancelModal] = useState(false); // 취소모달
   const [selectedReservation, setSelectedReservation] = useState(null); //내 예약중 선택된 예약
+  const reservations = useGolfStore((state) => state.reservations);
+  const setReservations = useGolfStore((state) => state.setReservations);
 
   // 취소 버튼 클릭시 모달 열기
   const handleCancelClick = (zoneId, hour) => {
@@ -53,9 +53,10 @@ export const MyReservation = () => {
   //   setListItem('golfReservationTable', updateReservations);
   //   // setReservations()
   // };
+  const golfReservationTable = getGolfReservationTable();
 
   React.useEffect(() => {
-    const golfReservationTable = getGolfReservationTable();
+    console.log('moute');
     setReservations([...golfReservationTable]); // 상태 업데이트 ->(UI 반영)
   }, []);
 
@@ -67,7 +68,7 @@ export const MyReservation = () => {
           예약 변경과 취소를 할 수 있습니다.
         </p>
       </section>
-      <section className="flex flex-col gap-2 w-full">
+      <section className="flex flex-col gap-2 w-full big-bottom-sheet">
         {reservations.map((el, index) => {
           return (
             <article key={index} className="flex gap-3 px-8 w-full">
