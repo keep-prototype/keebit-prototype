@@ -18,12 +18,12 @@ const BottomSheet = ({ isOpen, onClose, children }) => {
     >
       {/* 바텀시트 본체 */}
       <div
-        className={`w-full max-h-[95vh] min-h-[70vh] bg-white rounded-t-2xl shadow-lg transition-transform duration-300 ${
+        className={`w-full max-h-[95vh] bg-black rounded-t-2xl shadow-lg transition-transform duration-300 ${
           isOpen ? "translate-y-0" : "translate-y-full"
         }`}
         onClick={(e) => e.stopPropagation()} // 내부 클릭 시 닫히지 않도록 방지
       >
-        <div className="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-3" /> {/* 핸들바 */}
+        <div/>
         {children}
       </div>
     </div>

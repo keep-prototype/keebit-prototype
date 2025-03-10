@@ -194,7 +194,7 @@ export const Home = () => {
       {/* 바텀시트 */}
       <BottomSheet isOpen={isSheetOpen} onClose={() => setSheetOpen(false)}>
         {content === 'login' && <Login setSheetOpen={setSheetOpen} />}
-        {/* {content === 'reservation' && <Golf />} */}
+        {content === 'reservation' && <Golf />}
         {content === 'myReservation' && <MyReservation />}
         {content === 'myInfo' && <MyInfo />}
       </BottomSheet>

@@ -20,7 +20,7 @@ export const Login = ({setSheetOpen}) => {
     };
 
     return (
-        <main className="w-screen h-screen">
+        <main className="w-screen">
         {/* <div className="h-1/3 flex items-center justify-center bg-green-light">
             <img
             className="h-full"
@@ -29,9 +29,9 @@ export const Login = ({setSheetOpen}) => {
             />
         </div> */}
         {/* <p className="font-bold text-2xl pt-8 pb-5 px-5">키빗! 시작해봐요!</p> */}
-        <form className="pt-10 w-full px-5 flex flex-col gap-5 text-lg">
+        <form className="pt-10 pb-10 w-full px-5 flex flex-col gap-5 text-lg">
             <input
-            className="border w-full p-2.5 rounded-lg border-neutral-300 focus:ring-2 focus:ring-lime-200"
+            className="border w-full p-2.5 rounded-lg border-main-orange focus:ring-2 focus:ring-lime-200"
             onChange={(event) => setUserName(event.target.value)}
             value={userName}
             type="text"
@@ -39,7 +39,7 @@ export const Login = ({setSheetOpen}) => {
             />
             <input
             onChange={(event) => setAptName(event.target.value)}
-            className="border w-full p-3 rounded-lg border-neutral-300"
+            className="border w-full p-3 rounded-lg border-main-orange"
             value={aptName}
             type="text"
             placeholder="아파트 이름을 입력해주세요."
@@ -47,21 +47,21 @@ export const Login = ({setSheetOpen}) => {
             <div className="flex gap-3">
             <input
                 onChange={(event) => setAptDong(event.target.value)}
-                className="border w-full p-3 rounded-lg border-neutral-300"
+                className="border w-full p-3 rounded-lg border-main-orange"
                 value={aptDong}
                 type="text"
                 placeholder="아파트 동"
             />
             <input
                 onChange={(event) => setAptHo(event.target.value)}
-                className="border w-full p-3 rounded-lg border-neutral-300"
+                className="border w-full p-3 rounded-lg border-main-orange"
                 value={aptHo}
                 type="text"
                 placeholder="아파트 호수"
             />
             </div>
             <button
-            className="w-full p-2.5 rounded-lg bg-amber-600"
+            className="w-full p-2.5 rounded-lg bg-main-orange"
             type="button"
             onClick={submitLogin}
             >

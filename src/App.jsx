@@ -7,8 +7,9 @@ import { FirstLoading } from './components/FirstLoading';
 import { useSheetStore } from './store/useSheetStore';
 import { GolfZoneListSheet } from './components/GolfZoneListSheet';
 import { useLocation } from 'react-router';
-import { getItem } from './lib/localStorage';
+import { getItem, setListItem } from './lib/localStorage';
 import { useGolfStore } from './store/useGolfStore';
+import { GOLF_REPAIR_TABLE, GOLF_RESERVATION_TABLE } from './constants/GOLF_TABLE';
 
 function App() {
   const [isMore, setIsMore] = React.useState(false);

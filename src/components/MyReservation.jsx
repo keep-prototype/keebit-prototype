@@ -60,7 +60,7 @@ export const MyReservation = () => {
   }, []);
 
   return (
-    <main className="w-screen h-screen">
+    <main className="w-screen">
       <section className="px-10 pt-5 pb-7 text-center">
         <p className="font-bold text-xl">{userInfo.userName}님의 예약</p>
         <p className="font-sm text-neutral-500">
@@ -71,7 +71,7 @@ export const MyReservation = () => {
         {reservations.map((el, index) => {
           return (
             <article key={index} className="flex gap-3 px-8 w-full">
-              <figure className="w-full py-3 px-7 flex justify-between text-center text-xl font-semibold rounded-xl border bg-green-light">
+              <figure className="w-full py-3 px-7 flex justify-between text-center text-xl font-semibold rounded-xl  border border-main-orange bg-main-black">
                 <p>{el.zoneId}관</p>
                 <p>
                   {el.hour} : 00 ~ {el.hour} : 55
@@ -79,7 +79,7 @@ export const MyReservation = () => {
               </figure>
               <div className="min-w-fit">
                 <button
-                  className="h-full flex items-center justify-center border px-3 rounded-xl border-neutral-600"
+                  className="h-full flex items-center justify-center px-3 rounded-xl bg-main-orange"
                   onClick={() => handleCancelClick(el.zoneId, el.hour)}
                 >
                   취소
@@ -90,12 +90,12 @@ export const MyReservation = () => {
         })}
       </section>
       {isCancelModal && (
-        <main className="fixed top-0 left-0 w-screen h-screen">
+        <main className="fixed top-0 left-0 w-screen">
           <div
             onClick={handleModalBackgroundClick}
             className="fixed top-0 left-0 bg-black opacity-70 z-10 w-full h-full"
           />
-          <div className="absolute top-1/2 left-1/2 w-10/12 flex flex-col items-center justify-center rounded-2xl h-40 bg-white z-20 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute top-1/2 left-1/2 w-10/12 flex flex-col items-center justify-center rounded-2xl h-40 bg-main-black z-20 transform -translate-x-1/2 -translate-y-1/2">
             <p className="text-brown text-2xl font-semibold">
               {selectedReservation?.hour} : 00 ~ {selectedReservation?.hour} :
               55
@@ -103,7 +103,7 @@ export const MyReservation = () => {
             <p className="text-sm pt-1 pb-5">예약을 취소하시겠습니까?</p>
             <div className="w-full flex items-center justify-between px-10 font-bold">
               <button
-                className="bg-red-300 text-black py-3 px-10 rounded-2xl"
+                className="bg-main-orange text-black py-3 px-10 rounded-2xl"
                 onClick={confirmCancelReservation}
               >
                 확인
