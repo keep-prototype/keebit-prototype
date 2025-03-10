@@ -38,3 +38,20 @@ html {
   transform: translateY(0) rotate(0);
   transition: 0.3s;
 }
+@font-face {
+  font-family: 'Congrates';
+  src: url('./assets/fonts/Congrates.ttf');
+}
+@font-face {
+  font-family: 'Crog';
+  src: url('./assets/fonts/Crog.otf');
+}
+
+.logo-font {
+  font-family: 'Congrates';
+  letter-spacing: 2.5px;
+}
+
+.logo-font-2 {
+  font-family: 'Crog';
+}

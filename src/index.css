@@ -10,7 +10,7 @@ body {
 }
 
 .bg-main-black {
-  background-color: rgb(18, 23, 26);
+  background-color: rgb(19, 23, 28);
 }
 .text-main-orange {
   color: rgb(235, 81, 48);
@@ -30,4 +30,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+}
+.transition-2s {
+  transition: 2s all;
 }
