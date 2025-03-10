@@ -81,7 +81,7 @@ export const Home = () => {
           <h1 className="text-2xl text-main-white">골프 연습장</h1>
           <button
             className="py-3 px-10 text-center text-sm bg-main-orange border-0 rounded-sm"
-            onClick={() => openBottomSheet('reservation')}
+            onClick={toggleGolfZoneList}
           >
             예약하기
           </button>
@@ -194,7 +194,7 @@ export const Home = () => {
       {/* 바텀시트 */}
       <BottomSheet isOpen={isSheetOpen} onClose={() => setSheetOpen(false)}>
         {content === 'login' && <Login setSheetOpen={setSheetOpen} />}
-        {content === 'reservation' && <Golf />}
+        {/* {content === 'reservation' && <Golf />} */}
         {content === 'myReservation' && <MyReservation />}
         {content === 'myInfo' && <MyInfo />}
       </BottomSheet>
