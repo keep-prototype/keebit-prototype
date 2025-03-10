@@ -1,4 +1,4 @@
-import { getItem, getListItem } from '../shared/lib/localStorage';
+import { getItem, getListItem } from '../lib/localStorage';
 
 export const getGolfReservationTable = () =>
   getListItem('golfReservationTable');
