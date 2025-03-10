@@ -1,11 +1,23 @@
 @import "tailwindcss";
 
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  touch-action: none;
+  background-color: rgb(18, 23, 26);
+  color: white;
+}
+
 .bg-main-black{
   background-color: rgb(18, 23, 26);
 }
 .text-main-orange{
-  color: rgb(235,81,48)
+  color: rgb(235,81,48);
 }
 .bg-main-orange{
   background-color:  rgb(235,81,48);
+}
+.text-main-white {
+  color: white;
 }
