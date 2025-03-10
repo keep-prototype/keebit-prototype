@@ -4,20 +4,23 @@ import { GolfZone } from '../components/GolfZone';
 import { GOLF_TIME_TABLE, GOLF_ZONE_TABLE } from '../constants/GOLF_TABLE';
 import { useGolfStore } from '../store/useGolfStore';
 import { getListItem, setListItem } from '../lib/localStorage';
-
+import { getGolfReservationTable, getGolfRepairTable } from '../store/atoms';
+import { currentHour } from '../lib/getTime';
 export const GolfZoneListSheet = () => {
   const isGolfZoneListOpen = useSheetStore((state) => state.isGolfZoneListOpen);
   const toggleGolfZoneList = useSheetStore((state) => state.toggleGolfZoneList);
   const selectedZone = useGolfStore((state) => state.selectedZone);
 
+  const golfReservationTable = getGolfReservationTable();
+
   const [step, setStep] = React.useState(0);
   const [isAmimate, setIsAnimate] = React.useState(false);
 
-  const clikedHour = React.useRef(null);
+  const [clikedHour, setClikedHour] = React.useState(null);
 
   const handleNextClick = () => {
-    handleReservationClick();
     if (step === 1) {
+      handleReservationClick();
     } else {
       setStep(step + 1);
     }
@@ -25,20 +28,20 @@ export const GolfZoneListSheet = () => {
 
   const handleTimeClick = (hour) => {
     const isReservation = golfReservationTable.some(
-      (el) => el.zoneId === currentZoneId && el.hour === hour
+      (el) => el.zoneId === selectedZone && el.hour === hour
     );
 
     if (isReservation) {
-      clikedHour.current = hour;
+      setClikedHour(hour);
     } else {
-      clikedHour.current = hour;
+      setClikedHour(hour);
     }
   };
 
   const handleReservationClick = () => {
     const payload = {
-      zoneId: currentZoneId,
-      hour: clikedHour.current,
+      zoneId: selectedZone,
+      hour: clikedHour,
     };
     golfReservationTable.push(payload);
 
@@ -94,9 +97,14 @@ export const GolfZoneListSheet = () => {
                 );
                 return (
                   <p
+                    onClick={() => handleTimeClick(el.hour)}
                     key={el.hour}
-                    className={`p-2 w-10/12 text-center text-xl font-semibold rounded-xl border bg-white-border ${
-                      isReservation ? `bg-brown` : ''
+                    className={`p-2 w-10/12 text-center text-xl font-semibold rounded-xl border border-main-orange transition-all ${
+                      isReservation ? `bg-main-bron` : ''
+                    } ${
+                      clikedHour === el.hour
+                        ? 'bg-main-orange text-black'
+                        : 'text-main-orange'
                     }`}
                   >
                     {el.timeRange}

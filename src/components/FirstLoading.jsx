@@ -15,7 +15,7 @@ export const FirstLoading = () => {
       <main
         className={`${
           isAnimate ? 'bg-main-black' : 'bg-dark-gray'
-        } fixed top-0 left-0 w-screen h-screen flex flex-col gap-10 items-center justify-center z-50 transition-2s`}
+        } fixed top-0 left-0 w-screen h-screen flex flex-col gap-10 items-center justify-center z-50 transition-2s text-white`}
       >
         <p
           className={`text-lg scale100 transition-2s opacity-100 color-black logo-font ${
