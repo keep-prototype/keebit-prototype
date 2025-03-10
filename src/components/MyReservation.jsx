@@ -1,6 +1,6 @@
-import { getUserInfo } from '../store/atoms';
+import { getGolfReservationTable, getUserInfo } from '../store/atoms';
 import { getListItem, setListItem } from '../lib/localStorage';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export const MyReservation = () => {
   const userInfo = getUserInfo();
@@ -53,6 +53,11 @@ export const MyReservation = () => {
   //   setListItem('golfReservationTable', updateReservations);
   //   // setReservations()
   // };
+
+  React.useEffect(() => {
+    const golfReservationTable = getGolfReservationTable();
+    setReservations([...golfReservationTable]); // 상태 업데이트 ->(UI 반영)
+  }, []);
 
   return (
     <main className="w-screen h-screen">
