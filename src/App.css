@@ -7,3 +7,34 @@
 html {
   scrollbar-width: none;
 }
+
+.top {
+  transform: translateY(7px);
+  transition: 0.3s;
+}
+.top-rotate {
+  transform: translateY(9px) rotate(45deg);
+}
+.bottom {
+  transform: translateY(-7px);
+  transition: 0.3s;
+}
+.bottom-rotate {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.top-rotate-reverse {
+  transform: translateY(7px) rotate(0deg);
+  transition: 0.3s;
+}
+.bottom-rotate-reverse {
+  transform: translateY(-7px) rotate(0deg);
+  transition: 0.3s;
+}
+.bottom-origin {
+  transform: translateY(0) rotate(0);
+  transition: 0.3s;
+}
+.top-origin {
+  transform: translateY(0) rotate(0);
+  transition: 0.3s;
+}
