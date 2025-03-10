@@ -24,3 +24,10 @@ body {
 .bg-dark-gray {
   background-color: #303030;
 }
+.bg-image {
+  background-image: url('https://unicorn-images.b-cdn.net/72f7b330-7a6c-4d79-8fde-e56a12117227?optimizer=gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
