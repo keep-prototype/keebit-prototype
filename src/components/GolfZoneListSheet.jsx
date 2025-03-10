@@ -4,8 +4,8 @@ import { GolfZone } from '../components/GolfZone';
 import { GOLF_TIME_TABLE, GOLF_ZONE_TABLE } from '../constants/GOLF_TABLE';
 import { useGolfStore } from '../store/useGolfStore';
 import { getListItem, setListItem } from '../lib/localStorage';
-import { getGolfReservationTable, getGolfRepairTable } from '../store/atoms';
-import { currentHour } from '../lib/getTime';
+import { getGolfReservationTable } from '../store/atoms';
+
 export const GolfZoneListSheet = () => {
   const isGolfZoneListOpen = useSheetStore((state) => state.isGolfZoneListOpen);
   const toggleGolfZoneList = useSheetStore((state) => state.toggleGolfZoneList);
@@ -27,7 +27,7 @@ export const GolfZoneListSheet = () => {
   };
 
   const handleTimeClick = (hour) => {
-    const isReservation = golfReservationTable.some(
+    const isReservation = golfReservationTable?.some(
       (el) => el.zoneId === selectedZone && el.hour === hour
     );
 
@@ -91,7 +91,7 @@ export const GolfZoneListSheet = () => {
                 const golfReservationTable = getListItem(
                   'golfReservationTable'
                 );
-                const isReservation = golfReservationTable.some(
+                const isReservation = golfReservationTable?.some(
                   (value) =>
                     value.zoneId === selectedZone && value.hour === el.hour
                 );

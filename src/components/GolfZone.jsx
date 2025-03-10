@@ -33,7 +33,7 @@ export const GolfZone = ({ zoneId }) => {
     }
   });
 
-  const isRepair = golfRepairTable.some((el) => el.zoneId === zoneId);
+  const isRepair = golfRepairTable?.some((el) => el.zoneId === zoneId);
 
   const closeModal = () => {
     setIsModal(false);
