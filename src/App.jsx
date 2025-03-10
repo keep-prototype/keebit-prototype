@@ -6,14 +6,34 @@ import { Header } from './widgets/Header';
 import { FirstLoading } from './components/FirstLoading';
 import { useSheetStore } from './store/useSheetStore';
 import { GolfZoneListSheet } from './components/GolfZoneListSheet';
+import { useLocation } from 'react-router';
+import { getItem } from './lib/localStorage';
+import { useGolfStore } from './store/useGolfStore';
 
 function App() {
   const [isMore, setIsMore] = React.useState(false);
+  const [isAuth, setIsAuth] = React.useState(false);
+  const completeZone = useGolfStore((state) => state.completeZone);
+  const location = useLocation();
 
   const toggleMore = () => {
     setIsMore(!isMore);
   };
   const isGolfZoneListOpen = useSheetStore((state) => state.isGolfZoneListOpen);
+
+  React.useEffect(() => {
+    const isFirst = getItem('golfReservationTable') === null || undefined;
+    setIsAuth(getItem('aptName') !== null);
+
+    if (isFirst) {
+      setListItem('golfReservationTable', GOLF_RESERVATION_TABLE);
+      setListItem('golfRepairTable', GOLF_REPAIR_TABLE);
+    }
+  }, [location.pathname]);
+
+  React.useEffect(() => {
+    console.log(completeZone);
+  }, [completeZone]);
 
   return (
     <React.Fragment>

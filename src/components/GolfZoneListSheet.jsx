@@ -11,6 +11,8 @@ export const GolfZoneListSheet = () => {
   const toggleGolfZoneList = useSheetStore((state) => state.toggleGolfZoneList);
   const selectedZone = useGolfStore((state) => state.selectedZone);
 
+  const setCompleteZone = useGolfStore((state) => state.setCompleteZone);
+
   const golfReservationTable = getGolfReservationTable();
 
   const [step, setStep] = React.useState(0);
@@ -44,6 +46,7 @@ export const GolfZoneListSheet = () => {
       hour: clikedHour,
     };
     golfReservationTable.push(payload);
+    setCompleteZone(payload);
 
     setListItem('golfReservationTable', golfReservationTable);
 
