@@ -3,7 +3,7 @@ import { useSheetStore } from '../store/useSheetStore';
 import { GolfZone } from '../components/GolfZone';
 import { GOLF_TIME_TABLE, GOLF_ZONE_TABLE } from '../constants/GOLF_TABLE';
 import { useGolfStore } from '../store/useGolfStore';
-import { getListItem } from '../lib/localStorage';
+import { getListItem, setListItem } from '../lib/localStorage';
 
 export const GolfZoneListSheet = () => {
   const isGolfZoneListOpen = useSheetStore((state) => state.isGolfZoneListOpen);
@@ -11,11 +11,40 @@ export const GolfZoneListSheet = () => {
   const selectedZone = useGolfStore((state) => state.selectedZone);
 
   const [step, setStep] = React.useState(0);
-
   const [isAmimate, setIsAnimate] = React.useState(false);
 
+  const clikedHour = React.useRef(null);
+
   const handleNextClick = () => {
-    setStep(step + 1);
+    handleReservationClick();
+    if (step === 1) {
+    } else {
+      setStep(step + 1);
+    }
+  };
+
+  const handleTimeClick = (hour) => {
+    const isReservation = golfReservationTable.some(
+      (el) => el.zoneId === currentZoneId && el.hour === hour
+    );
+
+    if (isReservation) {
+      clikedHour.current = hour;
+    } else {
+      clikedHour.current = hour;
+    }
+  };
+
+  const handleReservationClick = () => {
+    const payload = {
+      zoneId: currentZoneId,
+      hour: clikedHour.current,
+    };
+    golfReservationTable.push(payload);
+
+    setListItem('golfReservationTable', golfReservationTable);
+
+    toggleGolfZoneList();
   };
 
   React.useEffect(() => {

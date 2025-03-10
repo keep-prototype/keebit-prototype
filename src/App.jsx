@@ -17,7 +17,7 @@ function App() {
 
   return (
     <React.Fragment>
-      {/* <FirstLoading /> */}
+      <FirstLoading />
       <Header isMore={isMore} toggleMore={toggleMore} />
       <Home />
       {isMore && <More />}
