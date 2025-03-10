@@ -8,11 +8,21 @@ export const Home = () => {
   //     navigate('/Login')
   // }
 
+  const [opacity, setOpacity] = React.useState('opacity-0');
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setOpacity('opacity-100');
+    }, 3200);
+  });
+
   return (
-    <main className="flex flex-col items-center w-screen h-screen pt-35 bg-image">
+    <main
+      className={`flex flex-col items-center w-screen h-screen pt-35 bg-image transition-all ${opacity}`}
+    >
       <div>
         <section className="mb-7">
-          <h1 className="font-semibold text-3xl text-center p-3">KEEBIT</h1>
+          <h1 className="logo-font text-3xl text-center p-3">KEEBIT</h1>
           <p className="font-light text-md text-center p-1 px-6">
             우리의 서비스를 통해 아파트 커뮤니티의 모든 예약을 쉽게 관리하세요.
           </p>
