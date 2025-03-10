@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 html,
 body {
@@ -9,15 +9,18 @@ body {
   color: white;
 }
 
-.bg-main-black{
+.bg-main-black {
   background-color: rgb(18, 23, 26);
 }
-.text-main-orange{
-  color: rgb(235,81,48);
+.text-main-orange {
+  color: rgb(235, 81, 48);
 }
-.bg-main-orange{
-  background-color:  rgb(235,81,48);
+.bg-main-orange {
+  background-color: rgb(235, 81, 48);
 }
 .text-main-white {
   color: white;
+}
+.bg-dark-gray {
+  background-color: #303030;
 }
