@@ -22,8 +22,6 @@ export const More = () => {
     true,
   ]);
 
-  const [isOpacity, setIsOpacity] = React.useState(true);
-
   React.useEffect(() => {
     setBackgroundColor('bg-dark-gray');
 
