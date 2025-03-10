@@ -31,19 +31,19 @@ export const MyInfo = () => {
           </p>
         </div>
       </section>
-      <section className="pt-7">
+      <section className="pt-7 pb-10">
         <figure
           onClick={redirectMyReservation}
-          className="border-b border-neutral-300 flex items-center justify-between pl-3 pr-4 py-5"
+          className="border-b border-main-orange flex items-center justify-between pl-3 pr-4 py-5"
         >
           <button>내 예약</button>
           <RightButtonIcon />
         </figure>
-        <figure className="border-b border-neutral-300 flex items-center justify-between pl-3 pr-4 py-5">
+        <figure className="border-b border-main-orange flex items-center justify-between pl-3 pr-4 py-5">
           <button onClick={submitLogout}>내 정보</button>
           <RightButtonIcon />
         </figure>
-        <figure className="border-b border-neutral-300 flex items-center justify-between pl-3 pr-4 py-5">
+        <figure className="border-b border-main-orange flex items-center justify-between pl-3 pr-4 py-5">
           <button onClick={submitLogout}>로그아웃</button>
           <RightButtonIcon />
         </figure>
