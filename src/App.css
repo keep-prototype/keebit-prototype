@@ -6,6 +6,12 @@
 /* Firefox에서 스크롤바 숨기기 */
 html {
   scrollbar-width: none;
+
+}
+
+html,body{
+ width: 100vw; 
+ height: 100vh;
 }
 
 .top {
